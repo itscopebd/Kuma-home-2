@@ -1,3 +1,7 @@
+sticky-header.header-wrapper.color-scheme-1.gradient,.header__icons {
+  display: none;
+}
+
 #header-top i.fa.fa-angle-down {
     color: #fff !important;
 }
