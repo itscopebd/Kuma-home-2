@@ -1,0 +1,98 @@
+{% assign s = section %}
+	
+    
+    <!-- ============================ Hero Banner  Start================================== -->
+    <div class="home-slider margin-bottom-0">
+
+    <!-- Slide -->
+     {% for block in s.blocks %}
+        {% assign b = block.settings %}
+
+        <div data-background-image="{{ b.slider__img |  image_url  }}" class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="home-slider-container">
+
+                        <!-- Slide Title -->
+                        <div class="home-slider-desc">
+                            <div class="home-slider-title mb-4">
+                                <h5 class="theme-cl fs-sm ft-ragular mb-0">{{ b.sub__title }}</h5>
+                                {{ b.title | replace: '<p>', '<h1 class="mb-1 ft-bold lg-heading">' | replace: '</p>', '</h1>' }}
+
+                                {% comment %} <h1 class="mb-1 ft-bold lg-heading">{{  b.title }}</h1> {% endcomment %}
+                                <span class="trending">{{  b.short__text }}</span>
+                            </div>
+
+                            <a href="{{  b.btn__url }}" class="btn stretched-link borders">{{  b.btn__text }} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                            </a>
+                        </div>
+                        <!-- Slide Title / End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     {% endfor %}
+    
+    
+   
+
+</div>
+<!-- ============================ Hero Banner End ================================== -->
+
+
+{% schema %}
+{
+    "name": "Heor banner",
+    "settings": [
+        
+        ],
+        "blocks": [
+            {
+                "type": "Slider",
+                "name":"Slider",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "slider__img",
+                        "label": "Slider Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "sub__title",
+                        "label": "Sub Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "short__text",
+                        "label": "Text Here"
+                    },
+                    {
+                        "type": "text",
+                        "id": "btn__text",
+                        "label": "Text Here"
+                    },
+                    {
+                        "type": "url",
+                        "id": "btn__url",
+                        "label": "Url Here"
+                    },
+
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name":"Hero Banner"
+            }
+        ]
+}
+{% endschema %}
