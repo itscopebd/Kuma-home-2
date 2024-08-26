@@ -1,0 +1,283 @@
+<div class="container">
+  <div class="row no-gutters exlio_gutters">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      {% for block in section.blocks %}
+        {% assign b = block.settings %}
+        {% case block.type %}
+          {% when 'Collection_left-large' %}
+            <div class="single_cats">
+              <a href="{{ b.collection_id.url }}" class="cards card-overflow card-scale lg_height">
+                {% if b.large__img != blank %}
+                  <div class="bg-image" style="background:url('{{ b.large__img |  image_url }}')no-repeat;"></div>
+                {% else %}
+                  <div
+                    class="bg-image"
+                    style="background:url('{{ b.collection_id.featured_image |  image_url }}')no-repeat;"
+                  ></div>
+                {% endif %}
+
+                <div class="ct_body">
+                  <div class="ct_body_caption left">
+                    <h2 class="m-0 ft-bold lh-1 fs-md text-upper">{{ b.title }}</h2>
+                    <span>{{ b.count }}</span>
+                  </div>
+                  <div class="ct_footer left">
+                    <span class="stretched-link fs-md">
+                      {{- b.item }}
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% when 'Collection_left-small' %}
+            <div class="single_cats">
+              <a href="{{ b.collection_id.url }}" class="cards card-overflow card-scale md_height">
+                {% if b.large__img != blank %}
+                  <div class="bg-image" style="background:url('{{ b.large__img |  image_url }}')no-repeat;"></div>
+                {% else %}
+                  <div
+                    class="bg-image"
+                    style="background:url('{{ b.collection_id.featured_image |  image_url }}')no-repeat;"
+                  ></div>
+                {% endif %}
+                <div class="ct_body">
+                  <div class="ct_body_caption left">
+                    <h2 class="m-0 ft-bold lh-1 fs-md text-upper">{{ b.title }}</h2>
+                    <span>{{ b.count }}</span>
+                  </div>
+                  <div class="ct_footer left">
+                    <span class="stretched-link fs-md">
+                      {{- b.item }}
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <!-- row -->
+      <div class="row no-gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          {% for blocks in section.blocks %}
+            {% assign b = blocks.settings %}
+            {% case blocks.type %}
+              {% when 'Collection_right-large' %}
+                <div class="single_cats">
+                  <a href="{{ b.collection_id.url }}" class="cards card-overflow card-scale lg_height">
+                    {% if b.large__img != blank %}
+                      <div class="bg-image" style="background:url('{{ b.large__img |  image_url }}')no-repeat;"></div>
+                    {% else %}
+                      <div
+                        class="bg-image"
+                        style="background:url('{{ b.collection_id.featured_image |  image_url }}')no-repeat;"
+                      ></div>
+                    {% endif %}
+
+                    <div class="ct_body">
+                      <div class="ct_body_caption left">
+                        <h2 class="m-0 ft-bold lh-1 fs-md text-upper">{{ b.title }}</h2>
+                        <span>{{ b.count }}</span>
+                      </div>
+                      <div class="ct_footer left">
+                        <span class="stretched-link fs-md">
+                          {{- b.item }}
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              {% when 'Collection_right-small' %}
+                <div class="single_cats">
+                  <a href="{{ b.collection_id.url }}" class="cards card-overflow card-scale md_height">
+                    {% if b.large__img != blank %}
+                      <div class="bg-image" style="background:url('{{ b.large__img |  image_url }}')no-repeat;"></div>
+                    {% else %}
+                      <div
+                        class="bg-image"
+                        style="background:url('{{ b.collection_id.featured_image |  image_url }}')no-repeat;"
+                      ></div>
+                    {% endif %}
+                    <div class="ct_body">
+                      <div class="ct_body_caption left">
+                        <h2 class="m-0 ft-bold lh-1 fs-md text-upper">{{ b.title }}</h2>
+                        <span>{{ b.count }}</span>
+                      </div>
+                      <div class="ct_footer left">
+                        <span class="stretched-link fs-md">
+                          {{- b.item }}
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections",
+  "class": "middle",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "Collection_left-large",
+      "name": "Collection Left Large",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "large__img",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "count",
+          "label": "Item Count"
+        },
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text Here"
+        }
+      ]
+    },
+    {
+      "type": "Collection_left-small",
+      "name": "Collection Left Small",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "small__img",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "count",
+          "label": "Item Count"
+        },
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text Here"
+        }
+      ]
+    },
+    {
+      "type": "Collection_right-large",
+      "name": "Collection Right Large",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "large__img",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "count",
+          "label": "Item Count"
+        },
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text Here"
+        }
+      ]
+    },
+    {
+      "type": "Collection_right-small",
+      "name": "Collection Right Small",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "small__img",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "count",
+          "label": "Item Count"
+        },
+        {
+          "type": "text",
+          "id": "item",
+          "label": "Text Here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections"
+    }
+  ]
+}
+{% endschema %}
