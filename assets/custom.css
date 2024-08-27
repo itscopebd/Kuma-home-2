@@ -55,6 +55,11 @@ section#shopify-section-template--22391200645432__related-products {
 
 }
 
+.product__review{
+  color: #ff9800 !important;
+}
+
+
 @media(max-width:767px) {
   section.shopify-section.middle .container {
     width: 100% !important;
