@@ -1,43 +1,56 @@
 <div class="product_grid card b-0">
-    <div class="badge bg-info text-white position-absolute ft-regular ab-left text-upper">Sale</div>
-    <div class="card-body p-0">
-      <div class="shop_thumb position-relative">
-        <a class="card-img-top d-block overflow-hidden" href="{{  product.url }}"
-          ><img class="card-img-top" src="{{  product.featured_image |  image_url }}" alt="..."
-        ></a>
-        <div class="product-hover-overlay d-flex align-items-center justify-content-between">
-          <div class="edlio">
-            <a href="javascript:void(0);" class="text-underline fs-sm ft-bold snackbar-addcart"
-              >Add To Cart</a
-            >
-          </div>
-          <div class="edlio d-flex align-items-center">
-            <button class="btn auto btn_love mr-2 snackbar-wishlist"><i class="fa fa-heart" aria-hidden="true"></i>
-            </button>
-            <a href="#" class="text-underline" data-toggle="modal" data-target="#quickview"
-              ><i class="fa fa-arrows-alt" aria-hidden="true"></i>
-              </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
-      <div class="text-left">
-        <div class="text-left">
-          <div class="star-rating align-items-center d-flex justify-content-left mb-1 p-0">
-            <i class="fa fa-star product__review" aria-hidden="true"></i>
-            <i class="fa fa-star product__review" aria-hidden="true"></i>
-            <i class="fa fa-star product__review" aria-hidden="true"></i>
-            <i class="fa fa-star product__review" aria-hidden="true"></i>
-            <i class="fa fa-star product__review" aria-hidden="true"></i>
+  {% # show product page %}
+  {% for tag in product.tags %}
+    {% if tag contains '__badge' %}
+      {% assign badge_name = tag | remove: '__badge:' %}
+      {% if badge_name == 'sale' %}
+        <div class="badge bg-info text-white position-absolute ft-regular ab-left text-upper">{{ badge_name }}</div>
+      {% endif %}
+      {% if badge_name == 'new' %}
+        <div class="badge bg-info text-white position-absolute ft-regular ab-left text-upper">{{ badge_name }}</div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 
-            <span class="small">(5 Reviews)</span>
-          </div>
-          <h5 class="fs-md mb-0 lh-1 mb-1">
-            <a href="{{ product.url }}">{{  product.title }}</a>
-          </h5>
-          <div class="elis_rty"><span class="ft-bold text-dark fs-sm">{{ product.price |  money }}</span></div>
+  <div class="card-body p-0">
+    <div class="shop_thumb position-relative">
+      <a class="card-img-top d-block overflow-hidden" href="{{  product.url }}"
+        ><img class="card-img-top" src="{{  product.featured_image |  image_url }}" alt="..."
+      ></a>
+      <div class="product-hover-overlay d-flex align-items-center justify-content-between">
+        <div class="edlio">
+          <a href="javascript:void(0);" class="text-underline fs-sm ft-bold snackbar-addcart">Add To Cart</a>
+        </div>
+        <div class="edlio d-flex align-items-center">
+          <button class="btn auto btn_love mr-2 snackbar-wishlist">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </button>
+          <a href="#" class="text-underline" data-toggle="modal" data-target="#quickview"
+            ><i class="fa fa-arrows-alt" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
+  <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+    <div class="text-left">
+      <div class="text-left">
+        <div class="star-rating align-items-center d-flex justify-content-left mb-1 p-0">
+          <i class="fa fa-star product__review" aria-hidden="true"></i>
+          <i class="fa fa-star product__review" aria-hidden="true"></i>
+          <i class="fa fa-star product__review" aria-hidden="true"></i>
+          <i class="fa fa-star product__review" aria-hidden="true"></i>
+          <i class="fa fa-star product__review" aria-hidden="true"></i>
+
+          <span class="small">(5 Reviews)</span>
+        </div>
+        <h5 class="fs-md mb-0 lh-1 mb-1">
+          <a href="{{ product.url }}">{{ product.title }}</a>
+        </h5>
+        <div class="elis_rty">
+          <span class="ft-bold text-dark fs-sm">{{ product.price | money }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
