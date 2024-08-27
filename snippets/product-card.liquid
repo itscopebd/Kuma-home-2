@@ -12,6 +12,19 @@
     {% endif %}
   {% endfor %}
 
+  {% # product discount show %}
+
+  {% if product.compare_at_price > product.price %}
+    {% assign discount_price = product.compare_at_price
+      | minus: product.price
+      | times: 100
+      | divided_by: product.compare_at_price
+    %}
+    <div class="badge bg-danger text-white position-absolute ft-regular ab-right text-upper">
+      -{{ discount_price }}%
+    </div>
+  {% endif %}
+
   <div class="card-body p-0">
     <div class="shop_thumb position-relative">
       <a class="card-img-top d-block overflow-hidden" href="{{  product.url }}"
