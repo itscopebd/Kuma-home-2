@@ -38,7 +38,7 @@
           <button class="btn auto btn_love mr-2 snackbar-wishlist">
             <i class="fa fa-heart" aria-hidden="true"></i>
           </button>
-          <a href="#" class="text-underline" data-toggle="modal" data-target="#quickview"
+          <a href="#" class="text-underline details__modal" data-product-id="{{ product.handle }}" data-toggle="modal" data-target="#quickview"
             ><i class="fa fa-arrows-alt" aria-hidden="true"></i>
           </a>
         </div>
@@ -67,3 +67,21 @@
     </div>
   </div>
 </div>
+
+<!-- Product View Modal -->
+<div class="modal fade lg-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickviewmodal" aria-hidden="true">
+    <div class="modal-dialog modal-xl login-pop-form" role="document">
+        <div class="modal-content" id="quickviewmodal">
+            <div class="modal-headers">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+        
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->

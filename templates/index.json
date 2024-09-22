@@ -26,6 +26,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -41,6 +42,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -66,10 +68,135 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "banner_NL7xjr": {
+      "type": "banner",
+      "blocks": {
+        "slider_Rx7UBA": {
+          "type": "Slider",
+          "settings": {
+            "slider__img": "shopify:\/\/shop_images\/banner-2_b63f9ccd-4aed-4af8-9b73-2b244ab94d01.png",
+            "sub__title": "New Winter",
+            "title": "<p>New Winter<br\/>Collections 2021<\/p>",
+            "short__text": "<p>There's nothing like trend<\/p>",
+            "btn__text": "Shop Now",
+            "btn__url": ""
+          }
+        },
+        "slider_y8UnNi": {
+          "type": "Slider",
+          "settings": {
+            "slider__img": "shopify:\/\/shop_images\/team-4.jpg",
+            "sub__title": "",
+            "title": "",
+            "short__text": "",
+            "btn__text": "",
+            "btn__url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_Rx7UBA",
+        "slider_y8UnNi"
+      ],
+      "settings": {}
+    },
+    "collections_RpCr3K": {
+      "type": "collections",
+      "blocks": {
+        "collection_left_large_nkLXqm": {
+          "type": "Collection_left-large",
+          "settings": {
+            "collection_id": "all",
+            "title": "Women Clothes",
+            "count": "3272 Items",
+            "item": "Browse Items"
+          }
+        },
+        "collection_left_small_iQAHND": {
+          "type": "Collection_left-small",
+          "settings": {
+            "collection_id": "men",
+            "title": "Kid's Wear",
+            "count": "3272 Items",
+            "item": "Browse Items"
+          }
+        },
+        "collection_right_small_9hDf4E": {
+          "type": "Collection_right-small",
+          "settings": {
+            "collection_id": "women",
+            "title": "Men's Wear",
+            "count": "4072 Items",
+            "item": "Browse Items"
+          }
+        },
+        "collection_right_large_zrxNVh": {
+          "type": "Collection_right-large",
+          "settings": {
+            "collection_id": "all",
+            "title": "Men's Jackets",
+            "count": "4072 Items",
+            "item": "Browse Items"
+          }
+        }
+      },
+      "block_order": [
+        "collection_left_large_nkLXqm",
+        "collection_left_small_iQAHND",
+        "collection_right_small_9hDf4E",
+        "collection_right_large_zrxNVh"
+      ],
+      "settings": {}
+    },
+    "colletion_tab_QcxpJt": {
+      "type": "colletion-tab",
+      "blocks": {
+        "collection_Ra7KTw": {
+          "type": "Collection",
+          "settings": {
+            "title": "All",
+            "collection": "all"
+          }
+        },
+        "collection_bw7MDE": {
+          "type": "Collection",
+          "settings": {
+            "title": "Men's",
+            "collection": "men"
+          }
+        },
+        "collection_W6LA6m": {
+          "type": "Collection",
+          "settings": {
+            "title": "Kid's",
+            "collection": "kids"
+          }
+        },
+        "collection_E7PecT": {
+          "type": "Collection",
+          "settings": {
+            "title": "Women's",
+            "collection": "women"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Ra7KTw",
+        "collection_bw7MDE",
+        "collection_W6LA6m",
+        "collection_E7PecT"
+      ],
+      "settings": {
+        "section__heading": ""
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "banner_NL7xjr",
+    "collections_RpCr3K",
+    "colletion_tab_QcxpJt"
   ]
 }
